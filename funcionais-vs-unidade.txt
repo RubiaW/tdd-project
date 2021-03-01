@@ -1,0 +1,2 @@
+ Testes funcionais são de mais alto nível, atuando no âmbito do usuário (mais externo), além de serem mais custosos de desenvolver e manter.
+ Já os testes de unidade são em baixo nível, atuando no âmbito do desenvolvedor e devem ser integrados na rotina normal de desenvolvimento.
