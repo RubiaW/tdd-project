@@ -1,9 +1,12 @@
-from django.test import TestCase
+from django.core.mail import send_mail
+from django.shortcuts import redirect
 
-class SendLoginEmailViewTest(TestCase):
-
-    def test_redirects_to_home_page(self):
-        response = self.client.post('/accounts/send_login_email', data={
-            'email': 'edith@example.com'
-        })
-        self.assertRedirects(response, '/')
+def send_login_email(request):
+    email = request.POST['email']
+    # send_mail(
+    #     'Your login link for Superlists',
+    #     'body text tbc',
+    #     'noreply@superlists',
+    #     [email],
+    # )
+    return redirect('/')
