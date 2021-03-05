@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'lists',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -84,6 +85,17 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
+
+AUTH_USER_MODEL = 'accounts.ListUser'
+AUTHENTICATION_BACKENDS = [
+    'accounts.authentication.PasswordlessAuthenticationBackend',
+]
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'teste681.testando@gmail.com'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASSWORD')
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
 
 AUTH_PASSWORD_VALIDATORS = [
     {
